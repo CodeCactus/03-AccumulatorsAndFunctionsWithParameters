@@ -17,6 +17,8 @@ def main():
     # Test your functions by putting calls to them here:
     print_sequence1(200)
     draw_circles1()
+    print_sequence2()
+    draw_circles2()
 def print_sequence1(n):
     for k in range(0,n+1,10):
         print(k)
@@ -43,8 +45,7 @@ def print_sequence1(n):
 
 def draw_circles1():
     window = rg.RoseWindow(400,400)
-    loops = rg.Circle(rg.Point(200,200),0)
-    for k in range(0,200,10):
+    for k in range(0,201,10):
         cl=rg.Circle(rg.Point(200,200),200-k)
         cl.fill_color=rg.Color(k,k//2,k+55)
         cl.attach_to(window)
@@ -80,14 +81,16 @@ def print_sequence2():
       ...
       390.
     """
+    for k in range(5, 40, 2):
+        print(k * 10)
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement this function, per its doc-string above.
+    # DONE: 4. Implement this function, per its doc-string above.
     # Put a statement in  main  to test this function.
     # REQUIREMENT: You must use a   RANGE  statement to solve this problem.
     # -------------------------------------------------------------------------
     print()
     print('--------------------------------------------------')
-    print('Running print_sequence2:')
+    print('print_sequence2 finished running')
     print('--------------------------------------------------')
 
 
@@ -101,14 +104,23 @@ def draw_circles2():
                (50, 100)   (70, 100)   (90, 100)  (110, 100) ... (390, 100)
     -- Waits for the user to press the mouse, then closes the window.
     """
+    window1 = rg.RoseWindow(400, 400)
+    for k in range(50, 390, 20):
+        cl = rg.Circle(rg.Point(k, 100), 10)
+        cl.fill_color = rg.Color(10,20, 100+(k//3))
+        # Yes I know it asks for fill color 'blue', but that's easy and I know how
+        #to do that already. I am experimenting and learning with more depth.
+        cl.attach_to(window1)
+    window1.render()
+    window1.close_on_mouse_click()
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement this function, per its doc-string above.
+    # DONE: 5. Implement this function, per its doc-string above.
     # Put a statement in  main  to test this function.
     # REQUIREMENT: You must use a   RANGE  statement to solve this problem.
     # -------------------------------------------------------------------------
     print()
     print('--------------------------------------------------')
-    print('Running draw_circles2:  See graphics window')
+    print('draw_circles2 has finishe running.  It is gradiated!')
     print('--------------------------------------------------')
 
 
